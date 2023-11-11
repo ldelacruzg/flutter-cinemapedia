@@ -2,15 +2,18 @@ import 'package:flutter_cinemapedia/features/movies/screens.dart';
 import 'package:go_router/go_router.dart';
 
 final appRouter = GoRouter(
-  initialLocation: '/movies',
+  initialLocation: '/home/0',
   routes: [
     GoRoute(
-      path: '/movies',
-      name: MoviesScreen.name,
-      builder: (context, state) => const MoviesScreen(),
+      path: '/home/:page',
+      name: HomeScreen.name,
+      builder: (context, state) {
+        final pageIndex = int.parse(state.pathParameters['page'] ?? '0');
+        return HomeScreen(pageIndex: pageIndex);
+      },
       routes: [
         GoRoute(
-          path: ':id',
+          path: 'movies/:id',
           name: MovieScreen.name,
           builder: (context, state) {
             final movieId = state.pathParameters['id'] ?? 'no-id';
@@ -19,5 +22,9 @@ final appRouter = GoRouter(
         ),
       ],
     ),
+    GoRoute(
+      path: '/',
+      redirect: (_, __) => '/home/0',
+    )
   ],
 );

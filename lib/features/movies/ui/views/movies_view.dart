@@ -1,32 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cinemapedia/features/movies/ui/providers/initial_loading.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:flutter_cinemapedia/shared/widgets.dart';
-import 'package:flutter_cinemapedia/features/movies/widgets.dart';
 import 'package:flutter_cinemapedia/features/movies/providers.dart';
+import 'package:flutter_cinemapedia/features/movies/widgets.dart';
 
-class MoviesScreen extends StatelessWidget {
-  static const name = 'movies_screen';
-
-  const MoviesScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: _MoviesView(),
-      bottomNavigationBar: CustomBottomNavigationBar(),
-    );
-  }
-}
-
-class _MoviesView extends ConsumerStatefulWidget {
-  const _MoviesView();
+class MoviesView extends ConsumerStatefulWidget {
+  const MoviesView({super.key});
 
   @override
-  _MoviesViewState createState() => _MoviesViewState();
+  MoviesViewState createState() => MoviesViewState();
 }
 
-class _MoviesViewState extends ConsumerState<_MoviesView> {
+class MoviesViewState extends ConsumerState<MoviesView> {
   @override
   void initState() {
     super.initState();
