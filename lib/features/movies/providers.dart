@@ -4,3 +4,4 @@ export 'ui/providers/movies_slideshow_provider.dart';
 export 'ui/providers/movie_details_provider.dart';
 export 'ui/providers/search_movie_provider.dart';
 export 'ui/providers/initial_loading.dart';
+export 'ui/providers/storage/local_storage_repository_provider.dart';
