@@ -76,7 +76,9 @@ class TMDBMovieDetailsModel {
         productionCountries: List<ProductionCountry>.from(
             json["production_countries"]
                 .map((x) => ProductionCountry.fromJson(x))),
-        releaseDate: DateTime.parse(json["release_date"]),
+        releaseDate: json["release_date"].isNotEmpty
+            ? DateTime.parse(json["release_date"])
+            : DateTime.now(),
         revenue: json["revenue"],
         runtime: json["runtime"],
         spokenLanguages: List<SpokenLanguage>.from(
@@ -140,7 +142,7 @@ class BelongsToCollection {
         id: json["id"],
         name: json["name"],
         posterPath: json["poster_path"],
-        backdropPath: json["backdrop_path"],
+        backdropPath: json["backdrop_path"] ?? '',
       );
 
   Map<String, dynamic> toJson() => {

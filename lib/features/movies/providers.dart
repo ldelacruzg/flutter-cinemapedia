@@ -5,3 +5,5 @@ export 'ui/providers/movie_details_provider.dart';
 export 'ui/providers/search_movie_provider.dart';
 export 'ui/providers/initial_loading.dart';
 export 'ui/providers/storage/local_storage_repository_provider.dart';
+export 'ui/providers/storage/is_movie_favorite_provider.dart';
+export 'ui/providers/storage/favorite_movies_provider.dart';
